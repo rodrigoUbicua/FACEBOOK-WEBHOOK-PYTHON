@@ -20,6 +20,7 @@ def echo():
     }
     
     # Retornando os parâmetros como JSON
+    print(combined_params)
     return jsonify(combined_params)
 
 if __name__ == '__main__':
