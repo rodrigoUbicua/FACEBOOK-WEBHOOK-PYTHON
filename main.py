@@ -26,8 +26,10 @@ def echo():
             # Capturando parâmetros do corpo (assumindo JSON)
             if request.is_json:
                 body_params = request.get_json()
+                print("JSON Body:", body_params)
             else:
                 body_params = request.form.to_dict()
+                print("Form Body:", body_params)
             
             # Combinando todos os parâmetros em um único dicionário
             combined_params = {
@@ -36,7 +38,7 @@ def echo():
             }
             
             # Retornando os parâmetros como JSON
-            print(combined_params)
+            print("Combined Params:", combined_params)
             return jsonify(combined_params), 200
         except Exception as e:
             print(f"Error processing POST request: {e}")
